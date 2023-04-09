@@ -15,4 +15,23 @@ router.get("/", async (request, response) => {
   }
 });
 
+router.post("/", async (request, response) => {
+  const { firstName, lastName, email, phone } = request.body;
+  try{
+    await User.create({
+      firstName,
+      lastName,
+      email,
+      phone,
+    });
+    response.json({
+      message: "User created",
+    });
+  } catch (error) {
+    response.json({
+      message: error,
+    });
+  }
+});
+
 module.exports = router;
