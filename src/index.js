@@ -1,11 +1,11 @@
 require("dotenv").config();
 
-const express = require("express");
+const express = require("express"); 
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const db = require("./config/db");
-const configureRoutes = require("./routes")
+const configureRoutes = require("./routes"); //Aquí agregue un punto y coma
 
 (async () => {
   await db();
@@ -16,7 +16,7 @@ const configureRoutes = require("./routes")
   app.use(cors());
   app.use(bodyParser.json());
 
-  configureRoutes(app)
+  configureRoutes(app);
 
   app.listen(+process.env.PORT, () => {
     console.log("Running...");
