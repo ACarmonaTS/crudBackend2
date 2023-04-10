@@ -4,14 +4,15 @@ const schema = mongoose.Schema(
   {
     firstName: {
       type: String,
-      require: true,
+      required: true,
     },
     lastName: {
       type: String,
     },
     email: {
       type: String,
-      require: true,
+      required: true,
+      unique: true,
     },
     phone: {
       type: String,
